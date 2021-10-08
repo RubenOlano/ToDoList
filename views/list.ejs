@@ -8,20 +8,24 @@
 <body>
 
 <div class="box" id="heading">
-    <h1> <%= dayOfWeek %></h1>
+    <h1> <%= listTitle %></h1>
 </div>
 
 <div class="box">
 
     <% for (let i = 0; i < itemList.length; i++){ %>
         <div class="item">
-            <input type="checkbox">
+            <label for="check">
+                <input id="check" type="checkbox">
+            </label>
             <p> <%= itemList[i] %></p>
         </div>
     <% } %>
         <form class="item" action="/" method="post">
-            <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
-            <button type="submit" name="button">+</button>
+            <label for="submit">
+                <input id="submit" type="text" name="newItem" placeholder="New Item" autocomplete="off">
+            </label>
+            <button type="submit" name="list" value=<%= listTitle %>>+</button>
         </form>
 
 </div>
