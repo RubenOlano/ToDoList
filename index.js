@@ -5,6 +5,7 @@ const app = express()
 
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({extended:true}))
+app.use(express.static("public"))
 
 let items = ["Buy Food", "Cook Food", "Eat Food"]
 
@@ -17,7 +18,7 @@ app.get('/', function (req, res){
     };
     let day = today.toLocaleDateString("en-us", options)
 
-    res.render('list', {dayOfWeek: day, newItem: items })
+    res.render('list', {dayOfWeek: day, itemList: items })
 
 })
 
