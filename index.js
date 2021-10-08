@@ -10,6 +10,10 @@ app.use(express.static("public"))
 let items = ["Buy Food", "Cook Food", "Eat Food"]
 let workItems = []
 
+app.get('/about', function (req, res){
+    res.render("about")
+})
+
 app.get('/work', function (req, res){
     res.render("list", {listTitle: 'Work List', itemList: workItems})
 })
